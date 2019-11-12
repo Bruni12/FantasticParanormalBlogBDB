@@ -1,11 +1,41 @@
-import path from 'path'
-import axios from 'axios'
+import { request } from 'graphql-request'
+
+const GRAPHCMS_ENDPOINT = 'https://api-uswest.graphcms.com/v1/ck2v2on9h04w501hg3zmr5m0d/master'
+
+const query = `
+{
+  posts {
+    id
+    title
+    image {
+      handle
+    }
+    content
+    tags
+    author {
+      id
+      name
+    }
+  }
+  
+  authors {
+    id
+    name
+    avatar {
+      handle
+    }
+    bibliography
+  }
+}
+`
 
 export default {
-  getRoutes: async () => {
-    const { data: posts } = await axios.get(
-      'https://jsonplaceholder.typicode.com/posts'
-    )
+    getsiteData: () => ({
+      title: 'React Static',
+    }),
+  
+getRoutes: async () => {
+  const{ posts, authors } = await request(GRAPHCMS_ENDPOINT, query) 
 
     return [
       {
@@ -15,22 +45,19 @@ export default {
         }),
         children: posts.map(post => ({
           path: `/post/${post.id}`,
-          template: 'src/containers/Post',
+          template: 'src/pages/post',
           getData: () => ({
             post,
           }),
         })),
       },
+      {
+       path: '/about',
+       component: 'src/pages/about',
+       getData: () => ({
+         authors
+       })
+      }
     ]
   },
-  plugins: [
-    [
-      require.resolve('react-static-plugin-source-filesystem'),
-      {
-        location: path.resolve('./src/pages'),
-      },
-    ],
-    require.resolve('react-static-plugin-reach-router'),
-    require.resolve('react-static-plugin-sitemap'),
-  ],
 }
