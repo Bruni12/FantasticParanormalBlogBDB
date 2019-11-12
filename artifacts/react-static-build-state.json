@@ -1,0 +1,53 @@
+{
+  "prefetchRate": 5,
+  "maxThreads": null,
+  "disableRoutePrefixing": false,
+  "outputFileRate": 100,
+  "extensions": [
+    ".js",
+    ".jsx"
+  ],
+  "minLoadTime": 200,
+  "disablePreload": false,
+  "disableRuntime": false,
+  "preloadPollInterval": 300,
+  "productionSourceMaps": false,
+  "entry": "index.js",
+  "paths": {
+    "ROOT": "C:\\Users\\Brenden Coder\\Desktop\\FantasticParanormalBlog",
+    "SRC": "C:\\Users\\Brenden Coder\\Desktop\\FantasticParanormalBlog\\src",
+    "DIST": "C:\\Users\\Brenden Coder\\Desktop\\FantasticParanormalBlog\\dist",
+    "ASSETS": "C:\\Users\\Brenden Coder\\Desktop\\FantasticParanormalBlog\\dist",
+    "PLUGINS": "C:\\Users\\Brenden Coder\\Desktop\\FantasticParanormalBlog\\plugins",
+    "TEMP": "C:\\Users\\Brenden Coder\\Desktop\\FantasticParanormalBlog\\tmp",
+    "ARTIFACTS": "C:\\Users\\Brenden Coder\\Desktop\\FantasticParanormalBlog\\artifacts",
+    "PUBLIC": "C:\\Users\\Brenden Coder\\Desktop\\FantasticParanormalBlog\\public",
+    "NODE_MODULES": "C:\\Users\\Brenden Coder\\Desktop\\FantasticParanormalBlog\\node_modules",
+    "EXCLUDE_MODULES": "C:\\Users\\Brenden Coder\\Desktop\\FantasticParanormalBlog\\node_modules",
+    "PACKAGE": "C:\\Users\\Brenden Coder\\Desktop\\FantasticParanormalBlog\\package.json",
+    "HTML_TEMPLATE": "C:\\Users\\Brenden Coder\\Desktop\\FantasticParanormalBlog\\dist\\index.html",
+    "STATIC_DATA": "C:\\Users\\Brenden Coder\\Desktop\\FantasticParanormalBlog\\dist\\staticData"
+  },
+  "plugins": [
+    "C:\\Users\\Brenden Coder\\Desktop\\FantasticParanormalBlog"
+  ],
+  "siteRoot": "/",
+  "basePath": "",
+  "publicPath": "/",
+  "assetsPath": "",
+  "extractCssChunks": false,
+  "inlineCss": false,
+  "babelExcludes": [],
+  "devServer": {
+    "host": "localhost",
+    "port": 3000
+  },
+  "terser": {
+    "terserOptions": {
+      "mangle": {},
+      "parse": {},
+      "compress": {},
+      "output": {}
+    }
+  }
+}

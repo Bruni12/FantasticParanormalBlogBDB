@@ -1,6 +1,6 @@
 import { request } from 'graphql-request'
 
-const GRAPHCMS_ENDPOINT = 'https://api-uswest.graphcms.com/v1/ck2v2on9h04w501hg3zmr5m0d/master'
+const GRAPHCMS_ENDPOINT = 'https://api-uswest.graphcms.com/v1/ck2v2on9h04w501hg3zmr5m0d/master';
 
 const query = `
 {
@@ -39,25 +39,25 @@ getRoutes: async () => {
 
     return [
       {
-        path: '/blog',
+        path: '/',
         getData: () => ({
           posts,
         }),
         children: posts.map(post => ({
           path: `/post/${post.id}`,
-          template: 'src/pages/post',
+          component: 'src/pages/post',
           getData: () => ({
             post,
           }),
         })),
       },
       {
-       path: '/about',
-       component: 'src/pages/about',
-       getData: () => ({
-         authors
-       })
+        path: '/about',
+        component: 'src/pages/about',
+        getData: () => ({
+          authors
+        })
       }
-    ]
-  },
-}
+    ];
+  }
+};
